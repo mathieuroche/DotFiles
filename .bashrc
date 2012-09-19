@@ -135,7 +135,7 @@ return_code()
 {
 	if [ $RET -ne 0 ]
 	then
-		echo -e "\033[0;31m$RET ↵ \033[0m";
+		echo -ne "$RET ↵ ";
 	fi
 }
 
@@ -147,4 +147,4 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWSTASHSTATE=1 
 GIT_PS1_SHOWUPSTREAM="verbose"
 PS1='\[\033[0;36m\]\u\[\033[0;34m\]@\[\033[35;35m\]\h \[\033[33m\]\w\[\033[0;31m\]$(__git_ps1 " (%s)")
-\[\033[0;34m\]\! $(return_code)\[\033[01;32m\]# \[\033[0m\]'
+\[\033[0;34m\]\! \[\033[0;31m\]$(return_code)\[\033[01;32m\]# \[\033[0m\]'
